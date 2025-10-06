@@ -1,0 +1,196 @@
+
+/* تنسيق زر عرض البيانات */
+.new-buttons-container {
+    display: flex;
+    gap: 10px;
+    margin-right: 15px;
+}
+
+.data-display-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s;
+}
+
+.data-display-btn:hover {
+    background-color: #45a049;
+}
+
+/* تنسيق النافذة المنبثقة */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    direction: rtl;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    padding: 15px 20px;
+    background-color: #4CAF50;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    margin: 0;
+}
+
+.close-btn {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #ddd;
+}
+
+.modal-body {
+    padding: 20px;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.data-summary {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.data-summary p {
+    margin: 5px 0;
+}
+
+.highlight {
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.data-tabs {
+    display: flex;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    border-bottom: 2px solid transparent;
+}
+
+.tab-btn.active {
+    border-bottom: 2px solid #4CAF50;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.tab-btn:hover {
+    background-color: #f1f1f1;
+}
+
+.tab-content {
+    min-height: 300px;
+}
+
+.data-tab {
+    display: none;
+}
+
+.data-tab.active {
+    display: block;
+}
+
+.data-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.data-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    border-left: 3px solid #4CAF50;
+}
+
+.data-name {
+    font-weight: bold;
+}
+
+.data-category, .data-count {
+    color: #666;
+    font-size: 14px;
+}
+
+.more-items {
+    text-align: center;
+    margin-top: 10px;
+    color: #666;
+    font-style: italic;
+}
+
+/* للشاشات الصغيرة */
+@media (max-width: 600px) {
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+
+    .data-summary {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .data-tabs {
+        flex-direction: column;
+    }
+
+    .tab-btn {
+        border-bottom: 1px solid #ddd;
+        border-right: none;
+    }
+
+    .tab-btn.active {
+        border-bottom: 1px solid #4CAF50;
+        border-left: 3px solid #4CAF50;
+    }
+}
